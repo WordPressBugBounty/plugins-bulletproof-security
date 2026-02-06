@@ -2,38 +2,12 @@
 ## ---------------------------------------------
 ## BulletProof Security Setup Wizard Export
 ## Support: https://forum.ait-pro.com/
-## Export Time: November 28, 2021 7:15 am
+## Export Time: November 11, 2025 9:12 pm
 ## Website: http://demo2.local
 ## WP ABSPATH: C:\xampp\htdocs9\demo2/
 ## ---------------------------------------------
 
 ## BPS Plugin Options
-
-$bulletproof_security_options_auth_cookie = 'bulletproof_security_options_auth_cookie';
-$bulletproof_security_options_auth_cookie_array = array(
-'bps_ace' => 'On', 
-'bps_ace_expiration' => '2880', 
-'bps_ace_rememberme_expiration' => '20160', 
-'bps_ace_user_account_exceptions' => 'ED5000', 
-'bps_ace_administrator' => '1', 
-'bps_ace_editor' => '1', 
-'bps_ace_author' => '1', 
-'bps_ace_contributor' => '1', 
-'bps_ace_subscriber' => '1', 
-'bps_ace_rememberme_disable' => '', 
-);
-
-if ( ! get_option( $bulletproof_security_options_auth_cookie ) ) {
-foreach( $bulletproof_security_options_auth_cookie_array as $key => $value ) {
-update_option('bulletproof_security_options_auth_cookie', $bulletproof_security_options_auth_cookie_array);
-}
-
-} else {
-
-foreach( $bulletproof_security_options_auth_cookie_array as $key => $value ) {
-update_option('bulletproof_security_options_auth_cookie', $bulletproof_security_options_auth_cookie_array);
-}
-}
 
 $bulletproof_security_options_autolock = 'bulletproof_security_options_autolock';
 $bulletproof_security_options_autolock_array = array(
@@ -85,10 +59,10 @@ RewriteRule . - [S=1]',
 RewriteCond %{HTTP_USER_AGENT} (havij|libwww-perl|wget|python|nikto|curl|scan|java|winhttp|clshttp|loader) [NC,OR]
 RewriteCond %{HTTP_USER_AGENT} (%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
 RewriteCond %{HTTP_USER_AGENT} (;|&lt;|&gt;|&#039;|&quot;|\)|\(|%0A|%0D|%22|%27|%28|%3C|%3E|%00).*(libwww-perl|wget|python|nikto|curl|scan|java|winhttp|HTTrack|clshttp|archiver|loader|email|harvest|extract|grab|miner) [NC,OR]
-RewriteCond %{THE_REQUEST} (\?|\*|%2a)+(%20+|\\s+|%20+\\s+|\\s+%20+|\\s+%20+\\s+)(http|https)(:/|/) [NC,OR]
+RewriteCond %{THE_REQUEST} (\?|\*|%2a)+(%20+|\s+|%20+\s+|\s+%20+|\s+%20+\s+)(http|https)(:/|/) [NC,OR]
 RewriteCond %{THE_REQUEST} etc/passwd [NC,OR]
 RewriteCond %{THE_REQUEST} cgi-bin [NC,OR]
-RewriteCond %{THE_REQUEST} (%0A|%0D|\\r|\\n) [NC,OR]
+RewriteCond %{THE_REQUEST} (%0A|%0D|\r|\n) [NC,OR]
 RewriteCond %{REQUEST_URI} owssvr\.dll [NC,OR]
 RewriteCond %{HTTP_REFERER} (%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
 RewriteCond %{HTTP_REFERER} \.opendirviewer\. [NC,OR]
@@ -155,7 +129,7 @@ $bulletproof_security_options_customcode_WPA_array = array(
 # Use BPS wp-admin Custom Code to modify/edit/change this code and to save it permanently.
 RewriteCond %{HTTP_USER_AGENT} (%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
 RewriteCond %{HTTP_USER_AGENT} (;|&lt;|&gt;|&#039;|&quot;|\)|\(|%0A|%0D|%22|%27|%28|%3C|%3E|%00).*(libwww-perl|wget|python|nikto|curl|scan|java|winhttp|HTTrack|clshttp|archiver|loader|email|harvest|extract|grab|miner) [NC,OR]
-RewriteCond %{THE_REQUEST} (\?|\*|%2a)+(%20+|\\s+|%20+\\s+|\\s+%20+|\\s+%20+\\s+)(http|https)(:/|/) [NC,OR]
+RewriteCond %{THE_REQUEST} (\?|\*|%2a)+(%20+|\s+|%20+\s+|\s+%20+|\s+%20+\s+)(http|https)(:/|/) [NC,OR]
 RewriteCond %{THE_REQUEST} etc/passwd [NC,OR]
 RewriteCond %{THE_REQUEST} cgi-bin [NC,OR]
 RewriteCond %{THE_REQUEST} (%0A|%0D) [NC,OR]
@@ -227,8 +201,8 @@ update_option('bulletproof_security_options_debug', $bulletproof_security_option
 
 $bulletproof_security_options_email = 'bulletproof_security_options_email';
 $bulletproof_security_options_email_array = array(
-'bps_send_email_to' => 'edward@ait-pro.com', 
-'bps_send_email_from' => 'edward@ait-pro.com', 
+'bps_send_email_to' => 'info@ait-pro.com', 
+'bps_send_email_from' => 'info@ait-pro.com', 
 'bps_send_email_cc' => '', 
 'bps_send_email_bcc' => '', 
 'bps_login_security_email' => 'lockoutOnly', 
@@ -242,6 +216,7 @@ $bulletproof_security_options_email_array = array(
 'bps_plugin_updates_email' => 'no', 
 'bps_theme_updates_frequency' => '1Hour', 
 'bps_theme_updates_email' => 'no', 
+'bps_hpf_email' => 'yes', 
 );
 
 if ( ! get_option( $bulletproof_security_options_email ) ) {
@@ -384,39 +359,6 @@ update_option('bulletproof_security_options_htaccess_res', $bulletproof_security
 }
 }
 
-$bulletproof_security_options_idle_session = 'bulletproof_security_options_idle_session';
-$bulletproof_security_options_idle_session_array = array(
-'bps_isl' => 'On', 
-'bps_isl_timeout' => '60', 
-'bps_isl_logout_url' => 'http://demo2.local/wp-content/plugins/bulletproof-security/isl-logout.php', 
-'bps_isl_login_url' => 'http://demo2.local/wp-login.php', 
-'bps_isl_custom_message' => '', 
-'bps_isl_custom_css_1' => 'background-color:#fff;line-height:normal;', 
-'bps_isl_custom_css_2' => 'position:fixed;top:20%;left:0%;text-align:center;height:100%;width:100%;', 
-'bps_isl_custom_css_3' => 'border:5px solid gray;background-color:#BCE2F1;', 
-'bps_isl_custom_css_4' => 'font-family:Verdana, Arial, Helvetica, sans-serif;font-size:18px;font-weight:bold;', 
-'bps_isl_user_account_exceptions' => 'ED5000', 
-'bps_isl_administrator' => '1', 
-'bps_isl_editor' => '1', 
-'bps_isl_author' => '1', 
-'bps_isl_contributor' => '1', 
-'bps_isl_subscriber' => '1', 
-'bps_isl_tinymce' => '', 
-'bps_isl_uri_exclusions' => '', 
-);
-
-if ( ! get_option( $bulletproof_security_options_idle_session ) ) {
-foreach( $bulletproof_security_options_idle_session_array as $key => $value ) {
-update_option('bulletproof_security_options_idle_session', $bulletproof_security_options_idle_session_array);
-}
-
-} else {
-
-foreach( $bulletproof_security_options_idle_session_array as $key => $value ) {
-update_option('bulletproof_security_options_idle_session', $bulletproof_security_options_idle_session_array);
-}
-}
-
 $bulletproof_security_options_login_security = 'bulletproof_security_options_login_security';
 $bulletproof_security_options_login_security_array = array(
 'bps_max_logins' => '3', 
@@ -428,7 +370,7 @@ $bulletproof_security_options_login_security_array = array(
 'bps_login_security_errors' => 'wpErrors', 
 'bps_login_security_remaining' => 'On', 
 'bps_login_security_pw_reset' => 'enable', 
-'bps_login_security_sort' => 'descending', 
+'bps_login_security_sort' => 'ascending', 
 'bps_enable_lsm_woocommerce' => '', 
 );
 
@@ -462,11 +404,17 @@ $bulletproof_security_options_login_security_jtc_array = array(
 'bps_jtc_author' => '', 
 'bps_jtc_contributor' => '', 
 'bps_jtc_subscriber' => '', 
-'bps_jtc_comment_form_error' => '<strong>ERROR</strong>: Incorrect JTC CAPTCHA Entered. Click your Browser back button and re-enter the JTC CAPTCHA.', 
-'bps_jtc_comment_form_label' => 'position:relative;top:0px;left:0px;padding:0px 0px 0px 0px;margin:0px 0px 0px 0px;', 
-'bps_jtc_comment_form_input' => 'position:relative;top:0px;left:0px;padding:0px 0px 0px 0px;margin:0px 0px 0px 0px;', 
+'bps_jtc_comment_form_error' => '<strong>ERROR</strong>: Incorrect CAPTCHA Entered.', 
+'bps_jtc_comment_form_label' => '', 
+'bps_jtc_comment_form_input' => '', 
+'bps_jtc_custom_roles' => '', 
 'bps_enable_jtc_woocommerce' => '', 
-'bps_jtc_custom_form_error' => '<strong>ERROR</strong>: Incorrect CAPTCHA Entered.', 
+'bps_jtc_custom_form_error' => '', 
+'bps_tooltip_captcha_title_after' => '', 
+'bps_tooltip_captcha_title_bold' => '', 
+'bps_tooltip_captcha_title_after_bold' => '', 
+'bps_tooltip_captcha_title_hidden' => '#000000', 
+'bps_tooltip_captcha_title_after_hidden' => '#ff0000', 
 );
 
 if ( ! get_option( $bulletproof_security_options_login_security_jtc ) ) {
@@ -483,32 +431,27 @@ update_option('bulletproof_security_options_login_security_jtc', $bulletproof_se
 
 $bulletproof_security_options_maint_mode = 'bulletproof_security_options_maint_mode';
 $bulletproof_security_options_maint_mode_array = array(
-'bps_maint_on_off' => 'Off', 
-'bps_maint_countdown_timer' => '1', 
-'bps_maint_countdown_timer_color' => 'white', 
-'bps_maint_time' => '180', 
-'bps_maint_retry_after' => '180', 
-'bps_maint_frontend' => '1', 
+'bps_maint_on_off' => '', 
+'bps_maint_countdown_timer' => '', 
+'bps_maint_countdown_timer_color' => '', 
+'bps_maint_time' => '', 
+'bps_maint_retry_after' => '', 
+'bps_maint_frontend' => '', 
 'bps_maint_backend' => '', 
-'bps_maint_ip_allowed' => '127.0.0.', 
-'bps_maint_text' => '&lt;div id=\&quot;image-text-top\&quot; style=\&quot;position: absolute; top: -250px; left: -375px; margin: 0px 0px 0px 20px;\&quot;&gt;
-&lt;h1&gt;Maintenance Mode Example&lt;/h1&gt;
-&lt;span style=\&quot;margin: 0px 0px 0px 20px;\&quot;&gt;Message to display to website visitors&lt;/span&gt;
-
-&lt;/div&gt;
-&lt;div id=\&quot;image-position\&quot; style=\&quot;z-index: -1; position: absolute; top: -325px; left: -560px; background-size: auto; padding: 0px; -moz-box-shadow: 4px 4px 4px #888888; -webkit-box-shadow: 4px 4px 4px #888888; box-shadow: 4px 4px 4px #888888;\&quot;&gt;&lt;img class=\&quot;alignnone size-full wp-image-5\&quot; src=\&quot;http://demo2.local/wp-content/uploads/2021/11/ventura-coast.jpg\&quot; alt=\&quot;\&quot; width=\&quot;1612\&quot; height=\&quot;1075\&quot; /&gt;&lt;/div&gt;', 
-'bps_maint_background_images' => '0', 
-'bps_maint_center_images' => '0', 
-'bps_maint_background_color' => 'white', 
-'bps_maint_show_visitor_ip' => '1', 
-'bps_maint_show_login_link' => '1', 
-'bps_maint_dashboard_reminder' => '1', 
-'bps_maint_log_visitors' => '1', 
-'bps_maint_countdown_email' => '1', 
-'bps_maint_email_to' => 'edward@ait-pro.com', 
-'bps_maint_email_from' => 'edward@ait-pro.com', 
-'bps_maint_email_cc' => 'edward@ait-pro.com', 
-'bps_maint_email_bcc' => 'edward@ait-pro.com', 
+'bps_maint_ip_allowed' => '', 
+'bps_maint_text' => '', 
+'bps_maint_background_images' => '', 
+'bps_maint_center_images' => '', 
+'bps_maint_background_color' => '', 
+'bps_maint_show_visitor_ip' => '', 
+'bps_maint_show_login_link' => '', 
+'bps_maint_dashboard_reminder' => '', 
+'bps_maint_log_visitors' => '', 
+'bps_maint_countdown_email' => '', 
+'bps_maint_email_to' => 'info@ait-pro.com', 
+'bps_maint_email_from' => 'info@ait-pro.com', 
+'bps_maint_email_cc' => '', 
+'bps_maint_email_bcc' => '', 
 'bps_maint_mu_entire_site' => '', 
 'bps_maint_mu_subsites_only' => '', 
 );
@@ -535,8 +478,7 @@ $bulletproof_security_options_MScan_array = array(
 'mscan_scan_delete_tmp_files' => 'Off', 
 'mscan_scan_frequency' => 'Off', 
 'mscan_exclude_dirs' => '', 
-'mscan_exclude_tmp_files' => '
-', 
+'mscan_exclude_tmp_files' => '', 
 'mscan_file_size_limit_hidden' => '14', 
 );
 
@@ -549,6 +491,28 @@ update_option('bulletproof_security_options_MScan', $bulletproof_security_option
 
 foreach( $bulletproof_security_options_MScan_array as $key => $value ) {
 update_option('bulletproof_security_options_MScan', $bulletproof_security_options_MScan_array);
+}
+}
+
+$bulletproof_security_options_mscan_hash_status = 'bulletproof_security_options_mscan_hash_status';
+$bulletproof_security_options_mscan_hash_status_array = array(
+'mscan_wp_core_hash_status' => '', 
+'mscan_wp_core_hash_count' => '', 
+'mscan_plugin_hash_status' => '', 
+'mscan_plugin_hash_count' => '', 
+'mscan_theme_hash_status' => '', 
+'mscan_theme_hash_count' => '', 
+);
+
+if ( ! get_option( $bulletproof_security_options_mscan_hash_status ) ) {
+foreach( $bulletproof_security_options_mscan_hash_status_array as $key => $value ) {
+update_option('bulletproof_security_options_mscan_hash_status', $bulletproof_security_options_mscan_hash_status_array);
+}
+
+} else {
+
+foreach( $bulletproof_security_options_mscan_hash_status_array as $key => $value ) {
+update_option('bulletproof_security_options_mscan_hash_status', $bulletproof_security_options_mscan_hash_status_array);
 }
 }
 
@@ -565,22 +529,6 @@ update_option('bulletproof_security_options_mscan_patterns', $bulletproof_securi
 
 foreach( $bulletproof_security_options_mscan_patterns_array as $key => $value ) {
 update_option('bulletproof_security_options_mscan_patterns', $bulletproof_security_options_mscan_patterns_array);
-}
-}
-
-$bulletproof_security_options_mscan_report = 'bulletproof_security_options_mscan_report';
-$bulletproof_security_options_mscan_report_array = array(
-);
-
-if ( ! get_option( $bulletproof_security_options_mscan_report ) ) {
-foreach( $bulletproof_security_options_mscan_report_array as $key => $value ) {
-update_option('bulletproof_security_options_mscan_report', $bulletproof_security_options_mscan_report_array);
-}
-
-} else {
-
-foreach( $bulletproof_security_options_mscan_report_array as $key => $value ) {
-update_option('bulletproof_security_options_mscan_report', $bulletproof_security_options_mscan_report_array);
 }
 }
 
@@ -601,26 +549,9 @@ update_option('bulletproof_security_options_mu_sysinfo', $bulletproof_security_o
 }
 }
 
-$bulletproof_security_options_mynotes = 'bulletproof_security_options_mynotes';
-$bulletproof_security_options_mynotes_array = array(
-'bps_my_notes' => '', 
-);
-
-if ( ! get_option( $bulletproof_security_options_mynotes ) ) {
-foreach( $bulletproof_security_options_mynotes_array as $key => $value ) {
-update_option('bulletproof_security_options_mynotes', $bulletproof_security_options_mynotes_array);
-}
-
-} else {
-
-foreach( $bulletproof_security_options_mynotes_array as $key => $value ) {
-update_option('bulletproof_security_options_mynotes', $bulletproof_security_options_mynotes_array);
-}
-}
-
 $bulletproof_security_options_new_feature = 'bulletproof_security_options_new_feature';
 $bulletproof_security_options_new_feature_array = array(
-'bps_mscan_rebuild' => 'upgrade', 
+'bps_mscan_rebuild' => 'new2', 
 );
 
 if ( ! get_option( $bulletproof_security_options_new_feature ) ) {

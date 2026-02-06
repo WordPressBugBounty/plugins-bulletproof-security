@@ -5,9 +5,10 @@ Plugin URI: https://forum.ait-pro.com/read-me-first/
 Text Domain: bulletproof-security
 Domain Path: /languages/
 Description: <strong>Feature Highlights:</strong> Setup Wizard &bull; MScan Malware Scanner &bull; .htaccess Website Security Protection (Firewalls) &bull; Security Logging|HTTP Error Logging &bull; DB Backup &bull; DB Table Prefix Changer &bull; Login Security & Monitoring &bull; JTC-Lite Login Form Bot Lockout Protection &bull; Idle Session Logout (ISL) &bull; Auth Cookie Expiration (ACE) &bull; System Info: Extensive System, Server and Security Status Information &bull; FrontEnd|BackEnd Maintenance Mode &bull; WP Automatic Update Options (BPS MU Tools must-use plugin) &bull; Force Strong Passwords &bull; Email Alerts When New Plugins And Themes Are Available.
-Version: 6.9
+Version: 7.1
 Author: AITpro Website Security
 Author URI: https://forum.ait-pro.com/read-me-first/
+License: GPLv2 or later
 */
 
 /*  Copyright (C) Edward Alexander | AITpro.com
@@ -33,10 +34,9 @@ Author URI: https://forum.ait-pro.com/read-me-first/
 // and cannot access the global variables within functions in BPS. Luckily this does not break BPS or WordPress in any way and PHP.net states this is technically not an error.
 global $bps_last_version, $bps_version, $bps_footer, $aitpro_bullet, $bps_topDiv, $bps_bottomDiv, $bpsPro_remote_addr, $bpsPro_http_client_ip, $bpsPro_http_forwarded, $bpsPro_http_x_forwarded_for, $bpsPro_http_x_cluster_client_ip, $bps_wpcontent_dir, $bps_plugin_dir, $plugin_hashes, $theme_hashes;
 
-define( 'BULLETPROOF_VERSION', '6.9' );
-$bps_last_version = '6.8';
-$bps_version = '6.9';
-$bps_footer = '<div id="AITpro-link">' . __('BulletProof Security ', 'bulletproof-security') . esc_html($bps_version) . __(' Plugin by ', 'bulletproof-security') . '<a href="'.esc_url('https://www.ait-pro.com/').'" target="_blank" title="AITpro Website Security">' . __( 'AITpro Website Security', 'bulletproof-security') . '</a></div>';
+define( 'BULLETPROOF_VERSION', '7.1' );
+$bps_last_version = '7.0';
+$bps_version = '7.1';
 $aitpro_bullet = '<img src="'.plugins_url('/bulletproof-security/admin/images/aitpro-bullet.png').'" style="padding:0px 3px 0px 3px;" />';
 // Top div & bottom div
 $bps_topDiv = '<div id="message" class="updated" style="background-color:#dfecf2;border:1px solid #999;-moz-border-radius-topleft:3px;-webkit-border-top-left-radius:3px;-khtml-border-top-left-radius:3px;border-top-left-radius:3px;-moz-border-radius-topright:3px;-webkit-border-top-right-radius:3px;-khtml-border-top-right-radius:3px;border-top-right-radius:3px;-webkit-box-shadow: 3px 3px 5px -1px rgba(153,153,153,0.7);-moz-box-shadow: 3px 3px 5px -1px rgba(153,153,153,0.7);box-shadow: 3px 3px 5px -1px rgba(153,153,153,0.7);"><p>';
@@ -87,6 +87,21 @@ add_action( 'init', 'bulletproof_security_load_plugin_textdomain' );
 // Load i18n Language Translation
 function bulletproof_security_load_plugin_textdomain() {
 	load_plugin_textdomain('bulletproof-security', false, dirname(plugin_basename(__FILE__)).'/languages/');
+}
+
+// Set BPS footer text after textdomain has been loaded.
+add_action( 'init', 'bulletproof_security_init_footer_text', 11 );
+
+function bulletproof_security_init_footer_text() {
+	global $bps_footer, $bps_version;
+
+	$bps_footer = '<div id="AITpro-link">'
+		. __('BulletProof Security ', 'bulletproof-security')
+		. esc_html( $bps_version )
+		. __(' Plugin by ', 'bulletproof-security')
+		. '<a href="' . esc_url( 'https://www.ait-pro.com/' ) . '" target="_blank" title="AITpro Website Security">'
+		. __( 'AITpro Website Security', 'bulletproof-security' )
+		. '</a></div>';
 }
 
 // BPS upgrade functions
@@ -156,7 +171,7 @@ static $this_plugin;
 	if ( $file == $this_plugin ) {
 		if ( ! is_multisite() ) {	
 		$links[] = '<br><a href="'.admin_url( 'admin.php?page=bulletproof-security/admin/wizard/wizard.php' ).'" title="'.esc_attr( 'BPS Setup Wizard' ).'">'.__('Setup Wizard', 'bulletproof-security').'</a>';
-		$links[] = '<br><a href="'.admin_url( 'plugins.php?page=bulletproof-security/admin/includes/uninstall.php' ).'" title="'.esc_attr( 'Select an uninstall option for BPS plugin deletion' ).'">'.__('Uninstall Options', 'bulleproof-security').'</a>';
+		$links[] = '<br><a href="'.admin_url( 'plugins.php?page=bulletproof-security/admin/includes/uninstall.php' ).'" title="'.esc_attr( 'Select an uninstall option for BPS plugin deletion' ).'">'.__('Uninstall Options', 'bulletproof-security').'</a>';
 		} elseif ( is_multisite() ) {
 		$links[] = '<br><a href="'.admin_url( 'admin.php?page=bulletproof-security/admin/wizard/wizard.php' ).'" title="'.esc_attr( 'BPS Setup Wizard' ).'">'.__('Setup Wizard', 'bulletproof-security').'</a>';		
 		// The Uninstall Options Form does not work on Network|Multisite so do not show the Uninstall Options link in Action Links
@@ -178,9 +193,9 @@ static $this_plugin;
 	if ( ! $this_plugin ) 
 		$this_plugin = plugin_basename(__FILE__);
 	if ( $file == $this_plugin ) {
-		$links[] = '<a href="https://forum.ait-pro.com/forums/topic/plugin-conflicts-actively-blocked-plugins-plugin-compatibility/" title="BulletProof Security Forum" target="_blank">'.__('Forum - Support', 'bulleproof-security').'</a>';
-		$links[] = '<a href="https://affiliates.ait-pro.com/po/" title="Upgrade to BPS Pro" target="_blank">'.__('Upgrade', 'bulleproof-security').'</a>';
-		$links[] = '<a href="https://www.ait-pro.com/bps-features/" title="BPS Pro Features" target="_blank">'.__('BPS Pro Features', 'bulleproof-security').'</a>';
+		$links[] = '<a href="https://forum.ait-pro.com/forums/topic/plugin-conflicts-actively-blocked-plugins-plugin-compatibility/" title="BulletProof Security Forum" target="_blank">'.__('Forum - Support', 'bulletproof-security').'</a>';
+		$links[] = '<a href="https://affiliates.ait-pro.com/po/" title="Upgrade to BPS Pro" target="_blank">'.__('Upgrade', 'bulletproof-security').'</a>';
+		$links[] = '<a href="https://www.ait-pro.com/bps-features/" title="BPS Pro Features" target="_blank">'.__('BPS Pro Features', 'bulletproof-security').'</a>';
 	}
 	return $links;
 }

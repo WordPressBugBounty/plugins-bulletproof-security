@@ -1,4 +1,4 @@
-#   BULLETPROOF 6.9 WP-ADMIN SECURE .HTACCESS     
+#   BULLETPROOF 7.1 WP-ADMIN SECURE .HTACCESS     
 
 # DO NOT ADD URL REWRITING IN THIS FILE OR WORDPRESS WILL BREAK
 # RewriteRule ^(.*)$ - [F] works in /wp-admin without breaking WordPress
@@ -112,7 +112,7 @@ RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=/([a-z0-9_.]//?)+ [NC,OR]
 RewriteCond %{QUERY_STRING} \=PHP[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} [NC,OR]
 RewriteCond %{QUERY_STRING} (\.\./|%2e%2e%2f|%2e%2e/|\.\.%2f|%2e\.%2f|%2e\./|\.%2e%2f|\.%2e/) [NC,OR]
 RewriteCond %{QUERY_STRING} ftp\: [NC,OR]
-RewriteCond %{QUERY_STRING} (http|https)\: [NC,OR]
+RewriteCond %{QUERY_STRING} (http|https)\: [NC,OR] 
 RewriteCond %{QUERY_STRING} \=\|w\| [NC,OR]
 RewriteCond %{QUERY_STRING} ^(.*)/self/(.*)$ [NC,OR]
 RewriteCond %{QUERY_STRING} ^(.*)cPath=(http|https)://(.*)$ [NC,OR]

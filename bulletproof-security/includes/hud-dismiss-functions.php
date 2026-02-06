@@ -885,14 +885,14 @@ function bpsPro_hud_owner_uid_check_notice() {
 		if ( ! empty($uid_array_diff_script) ) {
 			
 			foreach ( $uid_array_diff_script as $key => $value ) {
-				$mismatch = __('Folder|File', 'bullletproof-security') .': ' . $key . __(' Script UID', 'bulletproof-security').': '. $value .'<br>';
+				$mismatch = __('Folder|File', 'bulletproof-security') .': ' . $key . __(' Script UID', 'bulletproof-security').': '. $value .'<br>';
 			}
 		}
 		
 		if ( ! empty($uid_array_diff_fileowner) ) {
 			
 			foreach ( $uid_array_diff_fileowner as $key => $value ) {
-				$mismatch = __('Folder|File', 'bullletproof-security') .': ' . $key . __(' File Owner UID', 'bulletproof-security').': '. $value .'<br>';
+				$mismatch = __('Folder|File', 'bulletproof-security') .': ' . $key . __(' File Owner UID', 'bulletproof-security').': '. $value .'<br>';
 			}
 		}
 

@@ -391,6 +391,36 @@ register_setting('bulletproof_security_options_fsp', 'bulletproof_security_optio
 	}
 }
 
+## BPS 7.0: Delete old zip files if zip processing Forms are not in use
+function bps_delete_old_zip_files() {
+
+	//  Do not add true conditions: && $_POST['Submit-LSM-Export'] == true or the zip download will fail
+	if ( isset($_POST['Submit-LSM-Export']) || isset($_POST['Submit-SW-Export']) || isset($_POST['Submit-SW-Import']) || isset($_POST['Submit-CC-Export']) || isset($_POST['Submit-CC-Import']) ) {
+		
+		return;	
+	}
+
+	$LSM_ZIP_Delete = WP_PLUGIN_DIR . '/bulletproof-security/admin/login/lsm-master.zip';
+	
+	if ( file_exists($LSM_ZIP_Delete) ) {
+		unlink($LSM_ZIP_Delete);
+	}
+
+	$SW_Export_ZIP_Delete = WP_PLUGIN_DIR . '/bulletproof-security/admin/wizard/bps-settings-export.zip';
+	
+	if ( file_exists($SW_Export_ZIP_Delete) ) {
+		unlink($SW_Export_ZIP_Delete);
+	}
+
+	$CC_ZIP_Delete = WP_PLUGIN_DIR . '/bulletproof-security/admin/core/cc-master.zip';
+	
+	if ( file_exists($CC_ZIP_Delete) ) {
+		unlink($CC_ZIP_Delete);
+	}
+}
+
+bps_delete_old_zip_files();
+
 // BPS Menu
 function bulletproof_security_admin_menu() {
 global $blog_id;

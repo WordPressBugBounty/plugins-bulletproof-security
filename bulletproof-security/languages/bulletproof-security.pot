@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bulletproof-security\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-09 11:14-0700\n"
+"POT-Creation-Date: 2025-12-06 13:42-0800\n"
 "PO-Revision-Date: 2015-06-20 19:13-0800\n"
 "Last-Translator: Ed Alexander <edward@ait-pro.com>\n"
 "Language-Team: AITpro <info@ait-pro.com>\n"
@@ -1785,8 +1785,8 @@ msgstr ""
 msgid "Root Folder BulletProof Mode protection activated successfully."
 msgstr ""
 
-#: admin/core/core.php:139 admin/includes/admin.php:403
-#: admin/includes/admin.php:426 admin/includes/admin.php:427
+#: admin/core/core.php:139 admin/includes/admin.php:433
+#: admin/includes/admin.php:456 admin/includes/admin.php:457
 msgid "htaccess File Options"
 msgstr ""
 
@@ -1840,7 +1840,7 @@ msgstr ""
 #: admin/mscan/mscan.php:3089 admin/security-log/security-log.php:225
 #: admin/system-info/system-info.php:82 admin/theme-skin/theme-skin.php:82
 #: admin/wizard/wizard.php:1102 admin/wizard/wizard.php:1173
-#: admin/wizard/wizard.php:1771 bulletproof-security.php:183
+#: admin/wizard/wizard.php:1771 bulletproof-security.php:198
 msgid "BPS Pro Features"
 msgstr ""
 
@@ -2884,105 +2884,111 @@ msgstr ""
 msgid "BPS Pro Version Release Dates"
 msgstr ""
 
-#: admin/core/core.php:2223 admin/core/core.php:2224 admin/core/core.php:2225
-#: admin/core/core.php:2226 admin/core/core.php:2227 admin/core/core.php:2228
-#: admin/core/core.php:2234 admin/core/core.php:2235 admin/core/core.php:2236
-#: admin/core/core.php:2237 admin/core/core.php:2238 admin/core/core.php:2239
+#: admin/core/core.php:2223 admin/core/core.php:2227 admin/core/core.php:2228
+#: admin/core/core.php:2229 admin/core/core.php:2230 admin/core/core.php:2231
+#: admin/core/core.php:2232 admin/core/core.php:2238 admin/core/core.php:2239
 #: admin/core/core.php:2240 admin/core/core.php:2241 admin/core/core.php:2242
-#: admin/core/core.php:2243 admin/core/core.php:2244 admin/core/core.php:2250
-#: admin/core/core.php:2251 admin/core/core.php:2252 admin/core/core.php:2253
+#: admin/core/core.php:2243 admin/core/core.php:2244 admin/core/core.php:2245
+#: admin/core/core.php:2246 admin/core/core.php:2247 admin/core/core.php:2248
 #: admin/core/core.php:2254 admin/core/core.php:2255 admin/core/core.php:2256
 #: admin/core/core.php:2257 admin/core/core.php:2258 admin/core/core.php:2259
-#: admin/core/core.php:2265 admin/core/core.php:2266 admin/core/core.php:2267
-#: admin/core/core.php:2268 admin/core/core.php:2269 admin/core/core.php:2270
-#: admin/core/core.php:2276 admin/core/core.php:2277 admin/core/core.php:2278
-#: admin/core/core.php:2279 admin/core/core.php:2284 admin/core/core.php:2285
-#: admin/core/core.php:2286 admin/core/core.php:2287 admin/core/core.php:2288
-#: admin/core/core.php:2293 admin/core/core.php:2294 admin/core/core.php:2295
-#: admin/core/core.php:2296 admin/core/core.php:2297 admin/core/core.php:2298
+#: admin/core/core.php:2260 admin/core/core.php:2261 admin/core/core.php:2262
+#: admin/core/core.php:2263 admin/core/core.php:2269 admin/core/core.php:2270
+#: admin/core/core.php:2271 admin/core/core.php:2272 admin/core/core.php:2273
+#: admin/core/core.php:2274 admin/core/core.php:2280 admin/core/core.php:2281
+#: admin/core/core.php:2282 admin/core/core.php:2283 admin/core/core.php:2288
+#: admin/core/core.php:2289 admin/core/core.php:2290 admin/core/core.php:2291
+#: admin/core/core.php:2292 admin/core/core.php:2297 admin/core/core.php:2298
 #: admin/core/core.php:2299 admin/core/core.php:2300 admin/core/core.php:2301
-#: admin/core/core.php:2306 admin/core/core.php:2307 admin/core/core.php:2308
-#: admin/core/core.php:2309 admin/core/core.php:2310 admin/core/core.php:2311
+#: admin/core/core.php:2302 admin/core/core.php:2303 admin/core/core.php:2304
+#: admin/core/core.php:2305 admin/core/core.php:2310 admin/core/core.php:2311
 #: admin/core/core.php:2312 admin/core/core.php:2313 admin/core/core.php:2314
 #: admin/core/core.php:2315 admin/core/core.php:2316 admin/core/core.php:2317
-#: admin/core/core.php:2318 admin/core/core.php:2324 admin/core/core.php:2325
-#: admin/core/core.php:2326 admin/core/core.php:2327 admin/core/core.php:2328
+#: admin/core/core.php:2318 admin/core/core.php:2319 admin/core/core.php:2320
+#: admin/core/core.php:2321 admin/core/core.php:2322 admin/core/core.php:2328
 #: admin/core/core.php:2329 admin/core/core.php:2330 admin/core/core.php:2331
 #: admin/core/core.php:2332 admin/core/core.php:2333 admin/core/core.php:2334
 #: admin/core/core.php:2335 admin/core/core.php:2336 admin/core/core.php:2337
-#: admin/core/core.php:2343 admin/core/core.php:2344 admin/core/core.php:2345
-#: admin/core/core.php:2346 admin/core/core.php:2347 admin/core/core.php:2348
+#: admin/core/core.php:2338 admin/core/core.php:2339 admin/core/core.php:2340
+#: admin/core/core.php:2341 admin/core/core.php:2347 admin/core/core.php:2348
 #: admin/core/core.php:2349 admin/core/core.php:2350 admin/core/core.php:2351
 #: admin/core/core.php:2352 admin/core/core.php:2353 admin/core/core.php:2354
-#: admin/core/core.php:2355 admin/core/core.php:2361 admin/core/core.php:2362
-#: admin/core/core.php:2363 admin/core/core.php:2364 admin/core/core.php:2365
+#: admin/core/core.php:2355 admin/core/core.php:2356 admin/core/core.php:2357
+#: admin/core/core.php:2358 admin/core/core.php:2359 admin/core/core.php:2365
 #: admin/core/core.php:2366 admin/core/core.php:2367 admin/core/core.php:2368
-#: admin/core/core.php:2369 admin/core/core.php:2370 admin/core/core.php:2376
-#: admin/core/core.php:2377 admin/core/core.php:2378 admin/core/core.php:2379
+#: admin/core/core.php:2369 admin/core/core.php:2370 admin/core/core.php:2371
+#: admin/core/core.php:2372 admin/core/core.php:2373 admin/core/core.php:2374
 #: admin/core/core.php:2380 admin/core/core.php:2381 admin/core/core.php:2382
 #: admin/core/core.php:2383 admin/core/core.php:2384 admin/core/core.php:2385
+#: admin/core/core.php:2386 admin/core/core.php:2387 admin/core/core.php:2388
+#: admin/core/core.php:2389
 #, php-format
 msgid ""
 "<a href=\"%2$s\" target=\"_blank\" title=\"Link Opens in New Browser Window"
 "\">Whats New in BPS Pro %1$s</a>"
 msgstr ""
 
-#: admin/core/core.php:2231
+#: admin/core/core.php:2225
+#, php-format
+msgid "12 Year Milestone: 8-1-2023 | %1$s"
+msgstr ""
+
+#: admin/core/core.php:2235
 #, php-format
 msgid "11 Year Milestone: 8-1-2022 | %1$s"
 msgstr ""
 
-#: admin/core/core.php:2247
+#: admin/core/core.php:2251
 #, php-format
 msgid "10 Year Milestone: 8-1-2021 | %1$s"
 msgstr ""
 
-#: admin/core/core.php:2262
+#: admin/core/core.php:2266
 #, php-format
 msgid "9 Year Milestone: 8-1-2020 | %1$s"
 msgstr ""
 
-#: admin/core/core.php:2273
+#: admin/core/core.php:2277
 #, php-format
 msgid "8 Year Milestone: 8-1-2019 | %1$s"
 msgstr ""
 
-#: admin/core/core.php:2281
+#: admin/core/core.php:2285
 #, php-format
 msgid "7 Year Milestone: 8-1-2018 | %1$s"
 msgstr ""
 
-#: admin/core/core.php:2290
+#: admin/core/core.php:2294
 #, php-format
 msgid "6 Year Milestone: 8-1-2017 | %1$s"
 msgstr ""
 
-#: admin/core/core.php:2303
+#: admin/core/core.php:2307
 #, php-format
 msgid "5 Year Milestone: 8-1-2016 | %1$s"
 msgstr ""
 
-#: admin/core/core.php:2321
+#: admin/core/core.php:2325
 #, php-format
 msgid "4 Year Milestone: 8-1-2015 | %1$s"
 msgstr ""
 
-#: admin/core/core.php:2340
+#: admin/core/core.php:2344
 #, php-format
 msgid "3 Year Milestone: 8-1-2014 | %1$s"
 msgstr ""
 
-#: admin/core/core.php:2358
+#: admin/core/core.php:2362
 #, php-format
 msgid "2 Year Milestone: 8-1-2013 | %1$s"
 msgstr ""
 
-#: admin/core/core.php:2373
+#: admin/core/core.php:2377
 #, php-format
 msgid "1 Year Milestone: 8-1-2012 | %1$s"
 msgstr ""
 
-#: admin/core/core.php:2388
+#: admin/core/core.php:2392
 msgid "BPS Pro 1.0 - 4.0 | 1-1-2011 - 8-1-2011 | Private Use|Development"
 msgstr ""
 
@@ -3641,7 +3647,7 @@ msgstr ""
 #: admin/db-backup-security/db-backup-security.php:266
 #: admin/db-backup-security/db-backup-security.php:281
 #: admin/db-backup-security/db-backup-security.php:284
-#: admin/includes/admin.php:432
+#: admin/includes/admin.php:462
 msgid "DB Backup"
 msgstr ""
 
@@ -4461,7 +4467,7 @@ msgstr ""
 #: admin/email-log-settings/email-log-settings.php:256
 #: admin/email-log-settings/email-log-settings.php:269
 #: admin/email-log-settings/email-log-settings.php:272
-#: admin/includes/admin.php:444
+#: admin/includes/admin.php:474
 msgid "Alerts|Logs|Email Options"
 msgstr ""
 
@@ -4938,122 +4944,122 @@ msgstr ""
 msgid "WordPress Automatic Update Help Forum Topic"
 msgstr ""
 
-#: admin/includes/admin.php:403 admin/includes/admin.php:426
+#: admin/includes/admin.php:433 admin/includes/admin.php:456
 msgid "BPS Security"
 msgstr ""
 
-#: admin/includes/admin.php:404 admin/includes/admin.php:405
-#: admin/includes/admin.php:429 admin/includes/admin.php:430
-#: admin/includes/admin.php:431 admin/login/login.php:135
+#: admin/includes/admin.php:434 admin/includes/admin.php:435
+#: admin/includes/admin.php:459 admin/includes/admin.php:460
+#: admin/includes/admin.php:461 admin/login/login.php:135
 msgid "Login Security Options"
 msgstr ""
 
-#: admin/includes/admin.php:404 admin/includes/admin.php:429
+#: admin/includes/admin.php:434 admin/includes/admin.php:459
 msgid "Login Security"
 msgstr ""
 
-#: admin/includes/admin.php:405 admin/includes/admin.php:430
+#: admin/includes/admin.php:435 admin/includes/admin.php:460
 #: admin/login/login.php:167 admin/login/login.php:820
 #: admin/login/login.php:823
 msgid "JTC-Lite"
 msgstr ""
 
-#: admin/includes/admin.php:412 admin/includes/admin.php:440
+#: admin/includes/admin.php:442 admin/includes/admin.php:470
 #: admin/maintenance/maintenance.php:35 admin/maintenance/maintenance.php:37
 #: admin/maintenance/maintenance.php:175 admin/maintenance/maintenance.php:197
 #: admin/maintenance/maintenance.php:200
 msgid "Maintenance Mode"
 msgstr ""
 
-#: admin/includes/admin.php:419 admin/includes/admin.php:443
+#: admin/includes/admin.php:449 admin/includes/admin.php:473
 #: admin/system-info/system-info.php:31 admin/system-info/system-info.php:62
 msgid "System Info"
 msgstr ""
 
-#: admin/includes/admin.php:422 admin/includes/admin.php:445
+#: admin/includes/admin.php:452 admin/includes/admin.php:475
 #: admin/theme-skin/theme-skin.php:30 admin/theme-skin/theme-skin.php:59
 #: admin/theme-skin/theme-skin.php:73 admin/theme-skin/theme-skin.php:76
 msgid "UI|UX Options"
 msgstr ""
 
-#: admin/includes/admin.php:428 admin/mscan/mscan.php:210
+#: admin/includes/admin.php:458 admin/mscan/mscan.php:210
 msgid "MScan Malware Scanner"
 msgstr ""
 
-#: admin/includes/admin.php:428 admin/mscan/mscan.php:235
+#: admin/includes/admin.php:458 admin/mscan/mscan.php:235
 msgid "MScan"
 msgstr ""
 
-#: admin/includes/admin.php:431
+#: admin/includes/admin.php:461
 msgid "Idle Session Logout<br>Cookie Expiration"
 msgstr ""
 
-#: admin/includes/admin.php:432
+#: admin/includes/admin.php:462
 msgid "DB Backup & Security"
 msgstr ""
 
-#: admin/includes/admin.php:433 admin/security-log/security-log.php:31
+#: admin/includes/admin.php:463 admin/security-log/security-log.php:31
 #: admin/security-log/security-log.php:202
 #: admin/security-log/security-log.php:215
 #: admin/security-log/security-log.php:218
 msgid "Security Log"
 msgstr ""
 
-#: admin/includes/admin.php:446 admin/wizard/wizard.php:1005
+#: admin/includes/admin.php:476 admin/wizard/wizard.php:1005
 #: admin/wizard/wizard.php:1058 admin/wizard/wizard.php:1087
-#: admin/wizard/wizard.php:1090 bulletproof-security.php:158
-#: bulletproof-security.php:161
+#: admin/wizard/wizard.php:1090 bulletproof-security.php:173
+#: bulletproof-security.php:176
 msgid "Setup Wizard"
 msgstr ""
 
-#: admin/includes/admin.php:448
+#: admin/includes/admin.php:478
 msgid "MScan Scan Status"
 msgstr ""
 
-#: admin/includes/admin.php:451 admin/includes/admin.php:459
+#: admin/includes/admin.php:481 admin/includes/admin.php:489
 #: admin/includes/uninstall.php:39
 msgid "BPS Plugin Uninstall Options"
 msgstr ""
 
-#: admin/includes/admin.php:511
+#: admin/includes/admin.php:541
 msgid "BPS UI|UX Debug: SLF: CSS Script Loaded"
 msgstr ""
 
-#: admin/includes/admin.php:544
+#: admin/includes/admin.php:574
 msgid "BPS UI|UX Debug: SLF: js Script Loaded"
 msgstr ""
 
-#: admin/includes/admin.php:627
+#: admin/includes/admin.php:657
 msgid "BPS UI|UX Debug: Scripts|Styles Dequeued"
 msgstr ""
 
-#: admin/includes/admin.php:639
+#: admin/includes/admin.php:669
 msgid "Script Dequeued: "
 msgstr ""
 
-#: admin/includes/admin.php:645
+#: admin/includes/admin.php:675
 msgid ""
 "No additional plugin or theme Scripts were found that needed to be Dequeued."
 msgstr ""
 
-#: admin/includes/admin.php:657
+#: admin/includes/admin.php:687
 msgid "Style Dequeued: "
 msgstr ""
 
-#: admin/includes/admin.php:663
+#: admin/includes/admin.php:693
 msgid ""
 "No additional plugin or theme Styles were found that needed to be Dequeued."
 msgstr ""
 
-#: admin/includes/admin.php:712 admin/includes/admin.php:745
+#: admin/includes/admin.php:742 admin/includes/admin.php:775
 msgid "BPS UI|UX Debug: WP Toolbar nodes|menu items Removed"
 msgstr ""
 
-#: admin/includes/admin.php:724 admin/includes/admin.php:757
+#: admin/includes/admin.php:754 admin/includes/admin.php:787
 msgid "WP Toolbar node|menu item Removed: "
 msgstr ""
 
-#: admin/includes/admin.php:732 admin/includes/admin.php:765
+#: admin/includes/admin.php:762 admin/includes/admin.php:795
 msgid "No WP Toolbar nodes|menu items were Removed in BPS plugin pages"
 msgstr ""
 
@@ -12527,27 +12533,27 @@ msgid ""
 "Imported. The filename MUST be named: bps-settings-export.zip."
 msgstr ""
 
-#: bulletproof-security.php:39
+#: bulletproof-security.php:99
 msgid "BulletProof Security "
 msgstr ""
 
-#: bulletproof-security.php:39
+#: bulletproof-security.php:101
 msgid " Plugin by "
 msgstr ""
 
-#: bulletproof-security.php:39
+#: bulletproof-security.php:103
 msgid "AITpro Website Security"
 msgstr ""
 
-#: bulletproof-security.php:159
+#: bulletproof-security.php:174
 msgid "Uninstall Options"
 msgstr ""
 
-#: bulletproof-security.php:181
+#: bulletproof-security.php:196
 msgid "Forum - Support"
 msgstr ""
 
-#: bulletproof-security.php:182
+#: bulletproof-security.php:197
 msgid "Upgrade"
 msgstr ""
 

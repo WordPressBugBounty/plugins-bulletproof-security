@@ -2220,6 +2220,10 @@ echo '<a href="'.esc_url( 'https://forum.ait-pro.com/forums/topic/bulletproof-se
 
 <div class="pro-links">
 <?php
+   echo sprintf( __( '<a href="%2$s" target="_blank" title="Link Opens in New Browser Window">Whats New in BPS Pro %1$s</a>' ), '17.5', 'https://www.ait-pro.com/aitpro-blog/5789/bulletproof-security-pro/whats-new-in-bulletproof-security-pro-17/' ).'<br>';
+  ?>
+<div id="milestone"><?php echo sprintf( __( '12 Year Milestone: 8-1-2023 | %1$s' ), 'First Public Release: 8-1-2011'); ?></div>
+<?php
    echo sprintf( __( '<a href="%2$s" target="_blank" title="Link Opens in New Browser Window">Whats New in BPS Pro %1$s</a>' ), '17.4', 'https://www.ait-pro.com/aitpro-blog/5789/bulletproof-security-pro/whats-new-in-bulletproof-security-pro-17/' ).'<br>';
    echo sprintf( __( '<a href="%2$s" target="_blank" title="Link Opens in New Browser Window">Whats New in BPS Pro %1$s</a>' ), '17.3', 'https://www.ait-pro.com/aitpro-blog/5789/bulletproof-security-pro/whats-new-in-bulletproof-security-pro-17/' ).'<br>';
    echo sprintf( __( '<a href="%2$s" target="_blank" title="Link Opens in New Browser Window">Whats New in BPS Pro %1$s</a>' ), '17.2', 'https://www.ait-pro.com/aitpro-blog/5789/bulletproof-security-pro/whats-new-in-bulletproof-security-pro-17/' ).'<br>';
