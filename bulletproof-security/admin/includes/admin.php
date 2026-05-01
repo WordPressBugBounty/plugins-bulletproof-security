@@ -611,42 +611,36 @@ global $wp_scripts, $wp_styles, $bulletproof_security, $wp_version, $bps_version
 		wp_register_script('bps-crypto-js', plugins_url( '/bulletproof-security/admin/js/crypto-js/crypto-js.js' ), array(), $bps_version, true );	
 
 		// Register BPS Styles - The grey and black Theme Skins have been retired.
-		switch ( isset($UIoptions['bps_ui_theme_skin']) && $UIoptions['bps_ui_theme_skin'] ) {
-    		case 'blue':
-				wp_register_style('bps-css-38', plugins_url('/bulletproof-security/admin/css/bps-blue-ui-theme.css'), array(), $bps_version, 'all' );
+		// 7.2: Added new stylesheet for WP 7.0. Conditionally load original or new stylesheet based on WP version
+		switch ( $wp_version ) {
+    		case version_compare( $wp_version, '7.0', '<' ):
+				if ( isset($UIoptions['bps_ui_theme_skin']) && $UIoptions['bps_ui_theme_skin'] ) {
+					wp_register_style('bps-css-38', plugins_url('/bulletproof-security/admin/css/bps-blue-ui-theme.css'), array(), $bps_version, 'all' );
+				}
 			break;
-    		case 'grey':
-				wp_register_style('bps-css-38', plugins_url('/bulletproof-security/admin/css/bps-blue-ui-theme.css'), array(), $bps_version, 'all' );
-			break;
-    		case 'black':
-				wp_register_style('bps-css-38', plugins_url('/bulletproof-security/admin/css/bps-blue-ui-theme.css'), array(), $bps_version, 'all' );
+    		case version_compare( $wp_version, '7.0', '>=' ):
+				if ( isset($UIoptions['bps_ui_theme_skin']) && $UIoptions['bps_ui_theme_skin'] ) {
+					wp_register_style('bps-css-38', plugins_url('/bulletproof-security/admin/css/bps-blue-ui-theme-70.css'), array(), $bps_version, 'all' );
+				}
 			break;
 			default: 		
-					wp_register_style('bps-css-38', plugins_url('/bulletproof-security/admin/css/bps-blue-ui-theme.css'), array(), $bps_version, 'all' );		
+				if ( isset($UIoptions['bps_ui_theme_skin']) && $UIoptions['bps_ui_theme_skin'] ) {
+					wp_register_style('bps-css-38', plugins_url('/bulletproof-security/admin/css/bps-blue-ui-theme-70.css'), array(), $bps_version, 'all' );
+				}
 		}
-		
+
 		// Enqueue BPS scripts & script dependencies
 		wp_enqueue_script( 'bps-tabs' );
 		wp_enqueue_script( 'bps-dialog' );
 		wp_enqueue_script( 'bps-accordion' );
 		wp_enqueue_script( 'bps-encryption' );
 		wp_enqueue_script( 'bps-crypto-js' );
-		
+
 		// Enqueue BPS stylesheets
-		switch ( isset($UIoptions['bps_ui_theme_skin']) && $UIoptions['bps_ui_theme_skin'] ) {
-    		case 'blue':
-				wp_enqueue_style('bps-css-38' );
-			break;
-    		case 'grey':
-				wp_enqueue_style('bps-css-38' );
-			break;
-    		case 'black':
-				wp_enqueue_style('bps-css-38' );
-			break;
-			default: 		
-				wp_enqueue_style('bps-css-38' );	
+		if ( isset($UIoptions['bps_ui_theme_skin']) && $UIoptions['bps_ui_theme_skin'] ) {
+			wp_enqueue_style('bps-css-38');
 		}
-		
+
 		// Dequeue any other plugin or theme scripts that should not be loading on BPS plugin pages
 		$script_handles = array( 'bps-arq-ajax', 'bps-mscan-ajax', 'bps-tabs', 'bps-dialog', 'bps-accordion', 'bps-encryption', 'bps-crypto-js', 'admin-bar', 'jquery', 'jquery-ui-core', 'jquery-ui-tabs', 'jquery-ui-dialog', 'jquery-ui-widget', 'jquery-ui-mouse', 'jquery-ui-resizable', 'jquery-ui-draggable', 'jquery-ui-button', 'jquery-ui-position', 'jquery-ui-accordion', 'jquery-effects-core', 'jquery-effects-blind', 'jquery-effects-explode', 'common', 'utils', 'svg-painter', 'wp-auth-check', 'heartbeat', 'debug-bar', 'wp-polyfill', 'wp-i18n', 'hoverintent-js', 'wp-hooks', 'query-monitor' );
 		

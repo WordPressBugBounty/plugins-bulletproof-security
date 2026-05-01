@@ -1273,7 +1273,7 @@ bpsSetupWizardPrechecks();
 <option value="Off" <?php selected('Off', $bps_zip_download_fix); ?>><?php _e('Zip File Download Fix Off', 'bulletproof-security'); ?></option>
 <option value="On" <?php selected('On', $bps_zip_download_fix); ?>><?php _e('Zip File Download Fix On', 'bulletproof-security'); ?></option>
 </select><br />
-<input type="submit" name="Submit-Zip-Download-Fix" class="button bps-button" style="margin:10px 0px 20px 0px;width:232px;height:auto;white-space:normal" value="<?php esc_attr_e('Save Zip File Download Fix Option', 'bulletproof-security') ?>" />
+<input type="submit" name="Submit-Zip-Download-Fix" class="button bps-button" style="margin:10px 0px 20px 0px;width:238px;height:auto;white-space:normal" value="<?php esc_attr_e('Save Zip File Download Fix Option', 'bulletproof-security') ?>" />
 </form>
 
 <form name="muSysinfo" action="<?php echo admin_url( 'admin.php?page=bulletproof-security/admin/wizard/wizard.php#bps-tabs-2' ); ?>" method="post">
@@ -1287,14 +1287,14 @@ bpsSetupWizardPrechecks();
 <option value="hide" <?php selected('hide', $bps_sysinfo_hide_display); ?>><?php _e('Hide System Info Page', 'bulletproof-security'); ?></option>
 <option value="display" <?php selected('display', $bps_sysinfo_hide_display); ?>><?php _e('Display System Info Page', 'bulletproof-security'); ?></option>
 </select><br />
-<input type="submit" name="Submit-MU-Sysinfo-Display" class="button bps-button" style="margin:10px 0px 20px 0px;width:232px;height:auto;white-space:normal" value="<?php esc_attr_e('Save Multisite Hide|Display Option', 'bulletproof-security') ?>" />
+<input type="submit" name="Submit-MU-Sysinfo-Display" class="button bps-button" style="margin:10px 0px 20px 0px;width:238px;height:auto;white-space:normal" value="<?php esc_attr_e('Save Multisite Hide|Display Option', 'bulletproof-security') ?>" />
 </form>
 
 <form name="bpsNetLSM" action="<?php echo admin_url( 'admin.php?page=bulletproof-security/admin/wizard/wizard.php#bps-tabs-2' ); ?>" method="post">
 <?php wp_nonce_field('bps_setup_wizard'); ?>
 <div>
 <strong><label for="NetLSM"><?php _e('Network|Multisite Sitewide Login Security Settings', 'bulletproof-security'); ?></label></strong><br />  
-<input type="submit" name="Submit-Net-LSM" class="button bps-button" style="margin:10px 0px 20px 0px;width:232px;height:auto;white-space:normal" value="<?php esc_attr_e('Save Network LSM Options Sitewide', 'bulletproof-security') ?>" />
+<input type="submit" name="Submit-Net-LSM" class="button bps-button" style="margin:10px 0px 20px 0px;width:238px;height:auto;white-space:normal" value="<?php esc_attr_e('Save Network LSM Options Sitewide', 'bulletproof-security') ?>" />
 </div>
 <?php bpsPro_network_subsites_lsm_settings(); ?>
 </form>
@@ -1303,7 +1303,7 @@ bpsSetupWizardPrechecks();
 <?php wp_nonce_field('bps_setup_wizard'); ?>
 <div>
 <strong><label for="NetLSM"><?php _e('Network|Multisite Sitewide JTC Anti-Spam|Anti-Hacker Settings', 'bulletproof-security'); ?></label></strong><br />  
-<input type="submit" name="Submit-Net-JTC" class="button bps-button" style="margin:10px 0px 20px 0px;width:232px;height:auto;white-space:normal" value="<?php esc_attr_e('Save Network JTC Options Sitewide', 'bulletproof-security') ?>" />
+<input type="submit" name="Submit-Net-JTC" class="button bps-button" style="margin:10px 0px 20px 0px;width:238px;height:auto;white-space:normal" value="<?php esc_attr_e('Save Network JTC Options Sitewide', 'bulletproof-security') ?>" />
 </div>
 <?php bpsPro_network_subsites_jtc_settings(); ?>
 </form>
@@ -1312,7 +1312,7 @@ bpsSetupWizardPrechecks();
 <?php wp_nonce_field('bps_setup_wizard'); ?>
 <div>
 <strong><label for="NetLSM"><?php _e('Network|Multisite Sitewide Force Strong Passwords Settings', 'bulletproof-security'); ?></label></strong><br />  
-<input type="submit" name="Submit-Net-FSP" class="button bps-button" style="margin:10px 0px 20px 0px;width:232px;height:auto;white-space:normal" value="<?php esc_attr_e('Save Network FSP Options Sitewide', 'bulletproof-security') ?>" />
+<input type="submit" name="Submit-Net-FSP" class="button bps-button" style="margin:10px 0px 20px 0px;width:238px;height:auto;white-space:normal" value="<?php esc_attr_e('Save Network FSP Options Sitewide', 'bulletproof-security') ?>" />
 </div>
 <?php bpsPro_network_subsites_fsp_settings(); ?>
 </form>
@@ -1321,7 +1321,7 @@ bpsSetupWizardPrechecks();
 <?php wp_nonce_field('bps_setup_wizard'); ?>
 <div>
 <strong><label for="NetLSM"><?php _e('Network|Multisite Sitewide GDMW Settings', 'bulletproof-security'); ?></label></strong><br />  
-<input type="submit" name="Submit-Net-GDMW" class="button bps-button" style="margin:10px 0px 20px 0px;width:232px;height:auto;white-space:normal" value="<?php esc_attr_e('Save MU GDMW Options Sitewide', 'bulletproof-security') ?>" />
+<input type="submit" name="Submit-Net-GDMW" class="button bps-button" style="margin:10px 0px 20px 0px;width:238px;height:auto;white-space:normal" value="<?php esc_attr_e('Save MU GDMW Options Sitewide', 'bulletproof-security') ?>" />
 </div>
 <?php bpsPro_network_subsites_gdmw_settings(); ?>
 </form>
@@ -1785,7 +1785,7 @@ function bpsPro_network_subsites_gdmw_settings() {
 <form name="bpsSWImport" action="<?php echo admin_url( 'admin.php?page=bulletproof-security/admin/wizard/wizard.php#bps-tabs-3' ); ?>" method="post" enctype="multipart/form-data">
 	<?php wp_nonce_field('bulletproof_security_sw_import'); ?>
 	<input type="file" name="bps_sw_import" id="bps_sw_import" />
-	<input type="submit" name="Submit-SW-Import" class="button bps-button" style="margin-top:1px;" value="<?php esc_attr_e('Import', 'bulletproof-security') ?>" onclick="return confirm('<?php $text = __('Clicking OK will Import BPS plugin settings from the bps-settings-export.zip file on your computer.', 'bulletproof-security').'\n\n'.$bpsSpacePop.'\n\n'.__('Click OK to Import BPS plugin settings or click Cancel.', 'bulletproof-security'); echo $text; ?>')" />
+	<input type="submit" name="Submit-SW-Import" class="button bps-button" style="margin-top:5px;margin-bottom:5px;" value="<?php esc_attr_e('Import', 'bulletproof-security') ?>" onclick="return confirm('<?php $text = __('Clicking OK will Import BPS plugin settings from the bps-settings-export.zip file on your computer.', 'bulletproof-security').'\n\n'.$bpsSpacePop.'\n\n'.__('Click OK to Import BPS plugin settings or click Cancel.', 'bulletproof-security'); echo $text; ?>')" />
 	<?php bpsPro_setup_wizard_import(); ?>
 </form>
 </div>

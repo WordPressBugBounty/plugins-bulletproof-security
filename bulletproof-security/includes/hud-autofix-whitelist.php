@@ -377,6 +377,8 @@ function bpsPro_HUD_autofix_whitelist_check() {
 	$constant_contact_woocommerce_plugin_active = in_array( $constant_contact_woocommerce_plugin, apply_filters('active_plugins', get_option('active_plugins')));
 	$constant_contact_forms_plugin = 'constant-contact-forms/constant-contact-forms.php';
 	$constant_contact_forms_plugin_active = in_array( $constant_contact_forms_plugin, apply_filters('active_plugins', get_option('active_plugins')));
+	$wpforms_plugin = 'wpforms-lite/wpforms.php';
+	$wpforms_plugin_active = in_array( $wpforms_plugin, apply_filters('active_plugins', get_option('active_plugins')));
 
 	## BPSQSE RegEx Patterns
 	// 3 variations for both UA rules below: only java, java and curl, java, curl and wget
@@ -547,6 +549,12 @@ function bpsPro_HUD_autofix_whitelist_check() {
 		if ( ! preg_match( $marker2, $bps_customcode_bpsqse ) || ! preg_match( $marker3, $bps_customcode_bpsqse ) || ! preg_match( $marker4, $bps_customcode_bpsqse ) ) {
 			$autofix_message = 1;
 			$debug_BPSQSE .= __('CC Root Text Box 12: Constant Contact Forms Plugin', 'bulletproof-security').'<br>';
+		}		
+	}
+	if ( $wpforms_plugin_active == 1 || is_plugin_active_for_network( $wpforms_plugin ) ) {
+		if ( ! preg_match( $marker5, $bps_customcode_bpsqse ) ) {
+			$autofix_message = 1;
+			$debug_BPSQSE .= __('CC Root Text Box 12: WPForms Lite Plugin', 'bulletproof-security').'<br>';
 		}		
 	}
 

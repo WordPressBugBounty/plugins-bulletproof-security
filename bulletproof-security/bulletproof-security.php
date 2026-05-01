@@ -5,7 +5,7 @@ Plugin URI: https://forum.ait-pro.com/read-me-first/
 Text Domain: bulletproof-security
 Domain Path: /languages/
 Description: <strong>Feature Highlights:</strong> Setup Wizard &bull; MScan Malware Scanner &bull; .htaccess Website Security Protection (Firewalls) &bull; Security Logging|HTTP Error Logging &bull; DB Backup &bull; DB Table Prefix Changer &bull; Login Security & Monitoring &bull; JTC-Lite Login Form Bot Lockout Protection &bull; Idle Session Logout (ISL) &bull; Auth Cookie Expiration (ACE) &bull; System Info: Extensive System, Server and Security Status Information &bull; FrontEnd|BackEnd Maintenance Mode &bull; WP Automatic Update Options (BPS MU Tools must-use plugin) &bull; Force Strong Passwords &bull; Email Alerts When New Plugins And Themes Are Available.
-Version: 7.1
+Version: 7.2
 Author: AITpro Website Security
 Author URI: https://forum.ait-pro.com/read-me-first/
 License: GPLv2 or later
@@ -34,9 +34,9 @@ License: GPLv2 or later
 // and cannot access the global variables within functions in BPS. Luckily this does not break BPS or WordPress in any way and PHP.net states this is technically not an error.
 global $bps_last_version, $bps_version, $bps_footer, $aitpro_bullet, $bps_topDiv, $bps_bottomDiv, $bpsPro_remote_addr, $bpsPro_http_client_ip, $bpsPro_http_forwarded, $bpsPro_http_x_forwarded_for, $bpsPro_http_x_cluster_client_ip, $bps_wpcontent_dir, $bps_plugin_dir, $plugin_hashes, $theme_hashes;
 
-define( 'BULLETPROOF_VERSION', '7.1' );
-$bps_last_version = '7.0';
-$bps_version = '7.1';
+define( 'BULLETPROOF_VERSION', '7.2' );
+$bps_last_version = '7.1';
+$bps_version = '7.2';
 $aitpro_bullet = '<img src="'.plugins_url('/bulletproof-security/admin/images/aitpro-bullet.png').'" style="padding:0px 3px 0px 3px;" />';
 // Top div & bottom div
 $bps_topDiv = '<div id="message" class="updated" style="background-color:#dfecf2;border:1px solid #999;-moz-border-radius-topleft:3px;-webkit-border-top-left-radius:3px;-khtml-border-top-left-radius:3px;border-top-left-radius:3px;-moz-border-radius-topright:3px;-webkit-border-top-right-radius:3px;-khtml-border-top-right-radius:3px;border-top-right-radius:3px;-webkit-box-shadow: 3px 3px 5px -1px rgba(153,153,153,0.7);-moz-box-shadow: 3px 3px 5px -1px rgba(153,153,153,0.7);box-shadow: 3px 3px 5px -1px rgba(153,153,153,0.7);"><p>';

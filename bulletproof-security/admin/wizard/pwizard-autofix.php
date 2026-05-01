@@ -1417,8 +1417,24 @@ RewriteRule ^(.*)$ - [F]
 		$r25 = array();
 	}
 
-	$pattern_array = array_merge($p1, $p2, $p3, $p4, $p5, $p6, $p7, $p8, $p9, $p10, $p11, $p12, $p13, $p14, $p15, $p16, $p17, $p18, $p19, $p20, $p21, $p22, $p23, $p24, $p25);
-	$replace_array = array_merge($r1, $r2, $r3, $r4, $r5, $r6, $r7, $r8, $r9, $r10, $r11, $r12, $r13, $r14, $r15, $r16, $r17, $r18, $r19, $r20, $r21, $r22, $r23, $r24, $r25);
+	## WPForms Lite (free) Plugin: whitelist rules
+	$wpforms_plugin = 'wpforms-lite/wpforms.php';
+	$wpforms_plugin_active = in_array( $wpforms_plugin, apply_filters('active_plugins', get_option('active_plugins')));
+	$wpforms_plugin_fix = '';
+
+	if ( $wpforms_plugin_active == 1 || is_plugin_active_for_network( $wpforms_plugin ) ) {
+		$wpforms_plugin_fix = __('WPForms Lite Plugin BPSQSE AutoWhitelist successful', 'bulletproof-security');
+
+		$p26 = array('/RewriteCond\s%\{QUERY_STRING\}\s\^\.\*\(.*\|\<\|\>\|%3c\|%3e\)\.\*\s\[NC,OR\]/');
+		$r26 = array("# BPS AutoWhitelist QS5: WPForms Lite Plugin ");
+
+	} else {
+		$p26 = array();
+		$r26 = array();
+	}
+
+	$pattern_array = array_merge($p1, $p2, $p3, $p4, $p5, $p6, $p7, $p8, $p9, $p10, $p11, $p12, $p13, $p14, $p15, $p16, $p17, $p18, $p19, $p20, $p21, $p22, $p23, $p24, $p25, $p26);
+	$replace_array = array_merge($r1, $r2, $r3, $r4, $r5, $r6, $r7, $r8, $r9, $r10, $r11, $r12, $r13, $r14, $r15, $r16, $r17, $r18, $r19, $r20, $r21, $r22, $r23, $r24, $r25, $r26);
 
 	if ( $CC_Options_root['bps_customcode_bpsqse'] != '' ) {		
 		$bps_customcode_bpsqse_replace = preg_replace($pattern_array, $replace_array, $bps_customcode_bpsqse_array);
@@ -1472,7 +1488,7 @@ RewriteRule ^(.*)$ - [F]
 		update_option('bulletproof_security_options_customcode', $Root_CC_Options);
 	}
 
-	$success_array = array($woo_PagSeguro_fix, $event_espresso_fix, $woo_serial_key_fix, $woo_worldpay_fix, $kama_click_counter_fix, $riva_slider_pro_fix, $wp_auto_spinner_fix, $AgriTurismo_theme_fix, $wccp_pro_fix, $panopress_fix, $essb_code_canyon_fix, $mainwp_fix, $clevercourse_theme_fix, $wp_estore_fix, $wp_emember_fix, $easy_digital_downloads_fix, $mailpoet_fix, $mailchimp_fix, $DAPLiveLinks_fix, $wp_newsletter_fix, $sctocr_fix, $nextend_social_login_fix, $business_directory_plugin_fix, $constant_contact_woocommerce_plugin_fix, $constant_contact_forms_plugin_fix);
+	$success_array = array($woo_PagSeguro_fix, $event_espresso_fix, $woo_serial_key_fix, $woo_worldpay_fix, $kama_click_counter_fix, $riva_slider_pro_fix, $wp_auto_spinner_fix, $AgriTurismo_theme_fix, $wccp_pro_fix, $panopress_fix, $essb_code_canyon_fix, $mainwp_fix, $clevercourse_theme_fix, $wp_estore_fix, $wp_emember_fix, $easy_digital_downloads_fix, $mailpoet_fix, $mailchimp_fix, $DAPLiveLinks_fix, $wp_newsletter_fix, $sctocr_fix, $nextend_social_login_fix, $business_directory_plugin_fix, $constant_contact_woocommerce_plugin_fix, $constant_contact_forms_plugin_fix, $wpforms_plugin_fix);
 	
 	foreach ( $success_array as $successMessage ) {
 		
@@ -1958,6 +1974,24 @@ RewriteRule . - [S=99]";
 		}
 	}
 
+	## WPForms Lite (free) Plugin: whitelist rules
+	$wpforms_lite = 'wpforms-lite/wpforms.php';
+	$wpforms_lite_active = in_array( $wpforms_lite, apply_filters('active_plugins', get_option('active_plugins')));
+	$pattern26 = '/RewriteCond\s%{REQUEST_URI}\s\(post\\\.php\)\s\[NC\]/';
+	$wpforms_lite_array = array();
+	$wpforms_lite_fix = '';
+
+	if ( $wpforms_lite_active == 1 || is_plugin_active_for_network( $wpforms_lite ) ) {
+		$wpforms_lite_fix = __('WPForms Lite Plugin wp-admin skip/bypass rule AutoWhitelist successful', 'bulletproof-security');
+
+		if ( ! preg_match( $pattern26, $bps_customcode_two_wpa ) ) {
+		
+			$wpforms_lite_array[] = "# post.php skip/bypass rule
+RewriteCond %{REQUEST_URI} (post\.php) [NC]
+RewriteRule . - [S=99]";
+		}
+	}
+
 	$bps_customcode_two_wpa_array_impload = implode( "]", $bps_customcode_two_wpa_array );
 	$bps_customcode_two_wpa_array_preg_split = preg_split("/\[S=\d{1,2}\]/", $bps_customcode_two_wpa_array_impload);
 	$bps_customcode_two_wpa_array_preg_replace = preg_replace("/RewriteRule\s\.\s-\s/", "RewriteRule . - [S=99]", $bps_customcode_two_wpa_array_preg_split);
@@ -1970,7 +2004,7 @@ RewriteRule . - [S=99]";
 		$cc2_array[] = trim( $value, " \t\n\r");
 	}
 	
-	$bps_customcode_two_wpa_array_merge = array_merge($cc2_array, $woo_pfeed_pro_array, $visual_composer_array, $bookly_booking_array, $emg_pro_array, $nextgen_gallery_array, $OptimizePress_theme_array, $wp_checkout_array, $video_showcase_array, $wp_invoice_array, $yoast_seo_array, $formidable_pro_array, $google_typography_array, $flare_array, $bbPress_array, $spider_calendar_array, $buddypress_array, $wpml_transman_array, $events_manager_array, $mailpoet_array, $event_espresso_array, $content_egg_array, $flatsome_theme_array, $beaver_builder_array, $wp_reset_array, $bloom_array);
+	$bps_customcode_two_wpa_array_merge = array_merge($cc2_array, $woo_pfeed_pro_array, $visual_composer_array, $bookly_booking_array, $emg_pro_array, $nextgen_gallery_array, $OptimizePress_theme_array, $wp_checkout_array, $video_showcase_array, $wp_invoice_array, $yoast_seo_array, $formidable_pro_array, $google_typography_array, $flare_array, $bbPress_array, $spider_calendar_array, $buddypress_array, $wpml_transman_array, $events_manager_array, $mailpoet_array, $event_espresso_array, $content_egg_array, $flatsome_theme_array, $beaver_builder_array, $wp_reset_array, $bloom_array, $wpforms_lite_array);
 
 	$cc2_unique = array_unique($bps_customcode_two_wpa_array_merge);
 	$S_replace = preg_replace_callback( '/(S=\d{1,2})/', 'bpsPro_S_number_count_replace', $cc2_unique );
@@ -1992,7 +2026,7 @@ RewriteRule . - [S=99]";
 		update_option('bulletproof_security_options_customcode_WPA', $wpadmin_CC_Options);
 	}
 
-	$success_array = array($woo_pfeed_pro_fix, $visual_composer_fix, $bookly_booking_fix, $emg_pro_fix, $nextgen_gallery_fix, $OptimizePress_theme_fix, $wp_checkout_fix, $video_showcase_fix, $wp_invoice_fix, $yoast_seo_fix, $formidable_pro_fix, $google_typography_fix, $flare_fix, $bbPress_fix, $spider_calendar_fix, $buddypress_fix, $wpml_transman_fix, $events_manager_fix, $mailpoet_fix, $event_espresso_fix, $content_egg_fix, $flatsome_theme_fix, $beaver_builder_fix, $wp_reset_fix, $bloom_fix );
+	$success_array = array($woo_pfeed_pro_fix, $visual_composer_fix, $bookly_booking_fix, $emg_pro_fix, $nextgen_gallery_fix, $OptimizePress_theme_fix, $wp_checkout_fix, $video_showcase_fix, $wp_invoice_fix, $yoast_seo_fix, $formidable_pro_fix, $google_typography_fix, $flare_fix, $bbPress_fix, $spider_calendar_fix, $buddypress_fix, $wpml_transman_fix, $events_manager_fix, $mailpoet_fix, $event_espresso_fix, $content_egg_fix, $flatsome_theme_fix, $beaver_builder_fix, $wp_reset_fix, $bloom_fix, $wpforms_lite_fix );
 	
 	foreach ( $success_array as $successMessage ) {
 		

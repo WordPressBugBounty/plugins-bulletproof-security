@@ -560,7 +560,7 @@ $hover_icon_hpf = '<strong><font color="black"><span class="tooltip-250-120"><im
 	<input type="hidden" name="scrolltoHiddenPlugins" id="scrolltoHiddenPlugins" value="<?php echo esc_html( $scrolltoHiddenPlugins ); ?>" />
 	</div>
 
-	<div id="HPF5" style="position:relative;top:0px;left:0px;margin:10px 0px 10px 0px;">
+	<div id="HPF5" style="position:relative;top:0px;left:0px;margin:30px 0px 5px 0px;">
     <input type="submit" name="Hidden-Plugins-Ignore-Submit" class="button bps-button" value="<?php esc_attr_e('Save Plugin Folder|Files Ignore Rules', 'bulletproof-security') ?>" onclick="return confirm('<?php $text = __('This option is for adding ignore rules for Hidden or Empty Plugin Folders Detected by BPS or Non-standard WP files detected by BPS in your /plugins/ folder.', 'bulletproof-security').'\n\n'.$bpsSpacePop.'\n\n'.__('This is an independent option setting that does not require clicking any other buttons.', 'bulletproof-security').'\n\n'.$bpsSpacePop.'\n\n'.__('Click OK to proceed or click Cancel.', 'bulletproof-security'); echo $text; ?>')"/>
 	</div>
 
@@ -1933,7 +1933,7 @@ $text = __('Clicking OK will Export (copy) all of your Root and wp-admin Custom 
 <div id="CC-Delete">
 <form name="bpsDeleteCC" action="<?php echo admin_url( 'admin.php?page=bulletproof-security/admin/core/core.php#bps-tabs-7' ); ?>" method="post">
 	<?php wp_nonce_field('bulletproof_security_cc_delete'); ?>
-	<input type="submit" name="Submit-CC-Delete" class="button bps-button" value="<?php esc_attr_e('Delete', 'bulletproof-security') ?>" onclick="return confirm('<?php $text = __('Clicking OK will delete all of your Root and wp-admin Custom Code from all of the Custom Code text boxes.', 'bulletproof-security').'\n\n'.$bpsSpacePop.'\n\n'.__('Click OK to Delete Custom Code or click Cancel.', 'bulletproof-security'); echo $text; ?>')" />
+	<input type="submit" name="Submit-CC-Delete" class="button bps-button" style="margin-top:-10px" value="<?php esc_attr_e('Delete', 'bulletproof-security') ?>" onclick="return confirm('<?php $text = __('Clicking OK will delete all of your Root and wp-admin Custom Code from all of the Custom Code text boxes.', 'bulletproof-security').'\n\n'.$bpsSpacePop.'\n\n'.__('Click OK to Delete Custom Code or click Cancel.', 'bulletproof-security'); echo $text; ?>')" />
 	<?php bpsPro_CC_Delete(); ?>
 </form>
 </div>
@@ -2183,7 +2183,7 @@ $text = '<h3><span class="blue-bold">'.__('Want even more security protection fo
 
 <?php echo '<p><span class="blue-bold">'; _e('One-Click Setup Wizard Installation: ', 'bulletproof-security'); echo '</span>'; _e('Fast, simple and complete BPS Pro installation and setup in less than 1 minute.', 'bulletproof-security').'</p>'; ?>
 
-<?php echo '<p><span class="blue-bold">'; _e('One-Click Upgrade: ', 'bulletproof-security'); echo '</span>'; _e('One-click plugin upgrade on the WordPress Plugins page.', 'bulletproof-security').'</p>'; ?>
+<?php echo '<p><span class="blue-bold">'; _e('Automatic Plugin Upgrade: ', 'bulletproof-security'); echo '</span>'; _e('Click the "Enable BPS Pro auto-updates" link on the WordPress Plugins page to enable BPS Pro plugin auto-updates.', 'bulletproof-security').'</p>'; ?>
 
 <?php echo '<p><span class="blue-bold">'; _e('AutoRestore|Quarantine Intrusion Detection and Prevention System (ARQ IDPS): ', 'bulletproof-security'); echo '</span>'; _e('ARQ IDPS is a real-time file scanner that automatically quarantines malicious hacker files and autorestores legitimate website files if they have been altered or tampered with. ARQ IDPS uses a much more effective and reliable method of checking and monitoring website files instead of scanning file contents for malicious code. Hacker files that do not contain any malicious code will never be detected by any/all scanners, but will be detected by ARQ IDPS. ARQ IDPS quarantines all hacker files whether or not they contain malicious code. Quarantine Options: Quarantined files can be viewed, restored or deleted. ARQ IDPS works seamlessly with WordPress, Plugin and Theme Automatic, Manual and Shiny installations and updates.', 'bulletproof-security').'</p>'; ?>
 
@@ -2220,6 +2220,7 @@ echo '<a href="'.esc_url( 'https://forum.ait-pro.com/forums/topic/bulletproof-se
 
 <div class="pro-links">
 <?php
+   echo sprintf( __( '<a href="%2$s" target="_blank" title="Link Opens in New Browser Window">Whats New in BPS Pro %1$s</a>' ), '17.6', 'https://www.ait-pro.com/aitpro-blog/5815/bulletproof-security-pro/whats-new-in-bulletproof-security-pro-17-6/' ).'<br>';
    echo sprintf( __( '<a href="%2$s" target="_blank" title="Link Opens in New Browser Window">Whats New in BPS Pro %1$s</a>' ), '17.5', 'https://www.ait-pro.com/aitpro-blog/5789/bulletproof-security-pro/whats-new-in-bulletproof-security-pro-17/' ).'<br>';
   ?>
 <div id="milestone"><?php echo sprintf( __( '12 Year Milestone: 8-1-2023 | %1$s' ), 'First Public Release: 8-1-2011'); ?></div>
